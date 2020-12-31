@@ -21,8 +21,6 @@ set clipboard+=unnamed
 set number
 "" 現在の行を強調表示
 set cursorline
-"" 行末の1文字先までカーソルを移動できるように
-" set virtualedit=onemore
 "" インデントはスマートインデント
 set smartindent
 "" ビープ音を可視化
@@ -79,43 +77,16 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
-
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
 call plug#end()
 
-" fern settings
-let g:fern#renderer = "nerdfont"
-
-" fern toggle command
-nnoremap ,t :<c-u>Fern . -drawer -stay -keep -toggle -reveal=%<cr>
-
-" fern open window config
-function! s:fern_setup() abort
-	nnoremap <buffer> <nowait> q :<c-u>quit<cr>
-	nmap <buffer>
-		\ <Plug>(fern-action-open)
-		\ Plug>(fern-action-open:select)
-endfunction
-
-augroup __fern__
-	au!
-	autocmd VimEnter * ++nested Fern . -drawer -stay -keep -toggle -reveal=%
-	autocmd FileType fern call s:fern_setup()
-augroup END
-
-" CtrlP
-nmap <c-e> <plug>(ctrlp-launcher)
-nnoremap ,g :<c-u>CtrlPGitFiles<cr>
-nnoremap ,v :<c-u>CtrlPLauncher lsp<cr>
-nnoremap ,, :<c-u>CtrlPMRUFiles<cr>
-
-"syntax enable
-set t_Co=256
+syntax enable
 set termguicolors
 colorscheme iceberg
 "colorscheme elly
+set bg=dark
 
 " 各種設定の読み込み
 call map(sort(split(globpath(&runtimepath, '_config/*.vim'))), {->[execute('exec "so" v:val')]})
