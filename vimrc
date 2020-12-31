@@ -51,6 +51,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-jp/vimdoc-ja'
+
 Plug 'cocopon/iceberg.vim'
 Plug 'ulwlu/elly.vim'
 
@@ -80,7 +82,13 @@ Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
+Plug 'mattn/vim-lexiv'
+
+Plug 'tyru/caw.vim'
+
 call plug#end()
+
+set helplang=ja,en
 
 syntax enable
 set termguicolors
