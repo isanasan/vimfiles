@@ -15,26 +15,12 @@ set hidden
 set showcmd
 " クリップボードを使う
 set clipboard+=unnamed
-"
-"" 見た目系
-"" 行番号を表示
-set number
-"" 現在の行を強調表示
-set cursorline
-"" インデントはスマートインデント
-set smartindent
-"" ビープ音を可視化
-" set visualbell
-"" 括弧入力時の対応する括弧を表示
-set showmatch
-"" ステータスラインを常に表示
-set laststatus=2
+
+" 挿入モードでバックスペースで削除できるようにする
+set backspace=indent,eol,start
+
 "" コマンドラインの補完
 set wildmode=list:longest
-"" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
-
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
@@ -51,49 +37,63 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-jp/vimdoc-ja'
+	Plug 'vim-jp/vimdoc-ja'
 
-Plug 'cocopon/iceberg.vim'
-Plug 'ulwlu/elly.vim'
+	" 見た目関係
+	Plug 'cocopon/iceberg.vim'
+	Plug 'ulwlu/elly.vim'
 
-" markdown
-Plug 'plasticboy/vim-markdown'
+	" markdown
+	Plug 'plasticboy/vim-markdown'
 
-" filetree
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+	" filetree
+	Plug 'lambdalisue/nerdfont.vim'
+	Plug 'lambdalisue/fern.vim'
+	Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 
-"ctrlP
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mattn/ctrlp-matchfuzzy'
-Plug 'mattn/ctrlp-launcher'
-Plug 'mattn/ctrlp-lsp'
-Plug 'mattn/ctrlp-yo'
-Plug 'mattn/ctrlp-git'
+	"ctrlP
+	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'mattn/ctrlp-matchfuzzy'
+	Plug 'mattn/ctrlp-launcher'
+	Plug 'mattn/ctrlp-lsp'
+	Plug 'mattn/ctrlp-yo'
+	Plug 'mattn/ctrlp-git'
 
-"vimlsp
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-lsp-icons'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+	"vimlsp
+	Plug 'prabirshrestha/async.vim'
+	Plug 'prabirshrestha/asyncomplete.vim'
+	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+	Plug 'prabirshrestha/vim-lsp'
+	Plug 'mattn/vim-lsp-settings'
+	Plug 'mattn/vim-lsp-icons'
+	Plug 'hrsh7th/vim-vsnip'
+	Plug 'hrsh7th/vim-vsnip-integ'
 
-Plug 'mattn/vim-lexiv'
+	Plug 'mattn/vim-lexiv'
 
-Plug 'tyru/caw.vim'
+	Plug 'tyru/caw.vim'
 
 call plug#end()
 
 set helplang=ja,en
 
+" =============
+"" 見た目系
+" =============
+"" 行番号を表示
+set number
+"" 現在の行を強調表示
+set cursorline
+"" インデントはスマートインデント
+set smartindent
+"" 括弧入力時の対応する括弧を表示
+set showmatch
+"" ステータスラインを常に表示
+set laststatus=2
 syntax enable
 set termguicolors
-colorscheme iceberg
-"colorscheme elly
+" colorscheme iceberg
+colorscheme elly
 set bg=dark
 
 " 各種設定の読み込み
