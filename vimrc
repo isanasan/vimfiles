@@ -64,12 +64,29 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 
+"ctrlP
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/ctrlp-matchfuzzy'
+Plug 'mattn/ctrlp-launcher'
+Plug 'mattn/ctrlp-lsp'
+Plug 'mattn/ctrlp-yo'
+Plug 'mattn/ctrlp-git'
+
+"vimlsp
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
+
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
 call plug#end()
 
 " fern settings
 let g:fern#renderer = "nerdfont"
-
-
 
 " fern toggle command
 nnoremap ,t :<c-u>Fern . -drawer -stay -keep -toggle -reveal=%<cr>
@@ -88,10 +105,17 @@ augroup __fern__
 	autocmd FileType fern call s:fern_setup()
 augroup END
 
+" CtrlP
+nmap <c-e> <plug>(ctrlp-launcher)
+nnoremap ,g :<c-u>CtrlPGitFiles<cr>
+nnoremap ,v :<c-u>CtrlPLauncher lsp<cr>
+nnoremap ,, :<c-u>CtrlPMRUFiles<cr>
+
 "syntax enable
+set t_Co=256
 set termguicolors
-" colorscheme iceberg
-colorscheme elly
+colorscheme iceberg
+"colorscheme elly
 
 " 各種設定の読み込み
 call map(sort(split(globpath(&runtimepath, '_config/*.vim'))), {->[execute('exec "so" v:val')]})
