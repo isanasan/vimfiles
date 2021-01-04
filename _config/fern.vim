@@ -6,7 +6,7 @@ if empty(globpath(&rtp, 'autoload/fern.vim'))
 let g:fern#renderer = "nerdfont"
 
 " fern toggle command
-nnoremap ,t :<c-u>Fern . -drawer -stay -keep -toggle -reveal=%<cr>
+nnoremap <silent>,t :<c-u>Fern . -drawer -stay -keep -toggle -reveal=%<cr>
 
 " fern open window config
 function! s:fern_setup() abort
