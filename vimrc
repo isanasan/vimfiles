@@ -93,10 +93,11 @@ set showmatch
 set laststatus=2
 syntax enable
 set termguicolors
-" colorscheme iceberg
-colorscheme elly
+colorscheme iceberg
+" colorscheme elly
 set bg=dark
-let g:airline_theme='elly'
+" let g:airline_theme='elly'
+let g:airline_theme='iceberg'
 let g:airline#extensions#tabline#enabled = 1
 
 " 各種設定の読み込み
