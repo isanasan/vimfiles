@@ -13,7 +13,7 @@ function! s:fern_setup() abort
 	nnoremap <buffer> <nowait> q :<c-u>quit<cr>
 	nmap <buffer>
 		\ <Plug>(fern-action-open)
-		\ Plug>(fern-action-open:select)
+		\ <Plug>(fern-action-open:select)
 endfunction
 
 augroup __fern__
