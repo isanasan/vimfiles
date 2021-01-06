@@ -85,6 +85,12 @@ let g:vim_markdown_new_list_item_indent = 0
 " =============
 "" 見た目系
 " =============
+" インデント幅
+set shiftwidth=4
+" タブキー押下時に挿入される文字幅を指定
+set softtabstop=4
+" ファイル内にあるタブ文字の表示幅
+set tabstop=4
 "" 行番号を表示
 set number
 "" 現在の行を強調表示
