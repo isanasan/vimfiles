@@ -35,6 +35,8 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+let g:plug_shallow = 0
+
 call plug#begin('~/.vim/plugged')
 
 	Plug 'vim-jp/vimdoc-ja'
@@ -107,4 +109,12 @@ let g:airline_theme='iceberg'
 let g:airline#extensions#tabline#enabled = 1
 
 " 各種設定の読み込み
-call map(sort(split(globpath(&runtimepath, '_config/*.vim'))), {->[execute('exec "so" v:val')]})
+" call map(sort(split(globpath(&runtimepath, '_config/*.vim'))), {->[execute('exec "so" v:val')]})
+
+let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
+function! FindPlugin(name) abort
+  return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
+endfunction
+command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
+
+runtime! _config/*.vim

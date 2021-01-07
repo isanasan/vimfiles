@@ -1,6 +1,8 @@
-if empty(globpath(&rtp, 'autoload/ctrlp.vim'))
-	  finish
-  endif
+" if empty(globpath(&rtp, 'autoload/ctrlp.vim'))
+" 	  finish
+"   endif
+
+UsePlugin 'ctrlp.vim'
 
 " CtrlP
 nmap <c-e> <plug>(ctrlp-launcher)
