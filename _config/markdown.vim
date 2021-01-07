@@ -1,4 +1,4 @@
-if empty(globpath(&rtp, 'autoload/vim-markdown'))
+if empty(globpath(&rtp, 'ftplugin/markdown.vim'))
 	finish
 endif
 
