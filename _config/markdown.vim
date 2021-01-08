@@ -2,7 +2,7 @@
 " 	finish
 " endif
 
-UsePlugin 'markdown.vim'
+UsePlugin 'vim-markdown'
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
