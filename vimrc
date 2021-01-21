@@ -1,6 +1,9 @@
 set nocompatible
 set enc=utf-8
-set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,utf-16le,utf-16,default
+" set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,utf-16le,utf-16,default
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+" 改行コード自動判別
+set fileformats=unix,dos,mac
 "文字コードをUFT-8に設定
 "scriptencoding utf-8
 "" バックアップファイルを作らない
@@ -21,19 +24,6 @@ set backspace=indent,eol,start
 
 "" コマンドラインの補完
 set wildmode=list:longest
-" 検索系
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
-set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
-set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
-set incsearch
-" 検索時に最後まで行ったら最初に戻る
-set wrapscan
-" 検索語をハイライト表示
-set hlsearch
-" ESC連打でハイライト解除
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 let g:plug_shallow = 0
 
@@ -80,13 +70,6 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-let g:eskk#directory = "~/.eskk"
-let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
-let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
-set imdisable
-
-inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
-
 set helplang=ja,en
 
 " =============
@@ -119,8 +102,21 @@ set bg=dark
 let g:airline_theme='iceberg'
 let g:airline#extensions#tabline#enabled = 1
 
-" 各種設定の読み込み
-" call map(sort(split(globpath(&runtimepath, '_config/*.vim'))), {->[execute('exec "so" v:val')]})
+" =============
+"" 検索系
+" =============
+" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
+set ignorecase
+" 検索文字列に大文字が含まれている場合は区別して検索する
+set smartcase
+" 検索文字列入力時に順次対象文字列にヒットさせる
+set incsearch
+" 検索時に最後まで行ったら最初に戻る
+set wrapscan
+" 検索語をハイライト表示
+set hlsearch
+" ESC連打でハイライト解除
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
