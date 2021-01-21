@@ -1,7 +1,3 @@
-" if empty(globpath(&rtp, 'autoload/fern.vim'))
-" 	  finish
-"   endif
-
 UsePlugin 'fern.vim'
 
 " fern settings

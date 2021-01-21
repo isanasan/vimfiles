@@ -1,7 +1,3 @@
-" if empty(globpath(&rtp, 'ftplugin/markdown.vim'))
-" 	finish
-" endif
-
 UsePlugin 'vim-markdown'
 
 let g:vim_markdown_folding_disabled = 1
