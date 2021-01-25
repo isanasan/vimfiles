@@ -1,3 +1,6 @@
+setglobal fileformat=unix
+setglobal formatoptions+=mb
+
 if has('nvim')
 	let g:python3_host_prog = 'python'
 endif
