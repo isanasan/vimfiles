@@ -78,11 +78,13 @@ call plug#begin('~/.vim/plugged')
 	if has('nvim')
 		Plug 'joonty/vdebug'
 		Plug 'dbakker/vim-projectroot'
+		Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	endif
 
 call plug#end()
 
 set helplang=ja,en
+let g:deoplete#enable_at_startup = 1
 
 " =============
 "" 見た目系
