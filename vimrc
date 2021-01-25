@@ -1,5 +1,12 @@
+if has('nvim')
+	let g:python3_host_prog = 'python'
+endif
+
 set nocompatible
 set enc=utf-8
+if exists('&ambw')
+	set ambiwidth=single
+endif
 " set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,utf-16le,utf-16,default
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 " 改行コード自動判別
@@ -68,9 +75,36 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tyru/eskk.vim'
 	Plug 'skanehira/gyazo.vim'
 
+	if has('nvim')
+		Plug 'joonty/vdebug'
+	endif
+	Plug 'dbakker/vim-projectroot'
+
 call plug#end()
 
 set helplang=ja,en
+
+" PROJECTROOT
+let g:rootmarkers = ['.projectroot', 'docker-compose.yml', '.git', '.hg', '.svn', '.bzr','_darcs','build.xml']
+let g:vdebug_options= {
+\    "port" : 9000,
+\    "timeout" : 20,
+\    "on_close" : 'detach',
+\    "break_on_open" : 0,
+\    "remote_path" : "",
+\    "local_path" : "",
+\    "debug_window_level" : 0,
+\    "debug_file_level" : 0,
+\    "debug_file" : "",
+\    "window_arrangement" : ["DebuggerWatch", "DebuggerStack"]
+\}
+
+function! SetupDebug()
+let g:vdebug_options['path_maps'] = {'/var/www/html': call('projectroot#get', a:000)}
+" Hack to override vdebug options
+source ~/.vim/plugged/vdebug/plugin/vdebug.vim
+endfunction
+autocmd VimEnter * :call SetupDebug()
 
 " =============
 "" 見た目系
