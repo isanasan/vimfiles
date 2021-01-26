@@ -87,7 +87,6 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 set helplang=ja,en
-let g:deoplete#enable_at_startup = 1
 
 " =============
 "" 見た目系
