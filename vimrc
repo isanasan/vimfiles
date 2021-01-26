@@ -44,7 +44,7 @@ call plug#begin('~/.vim/plugged')
 	" 見た目関係
 	Plug 'cocopon/iceberg.vim'
 	Plug 'ulwlu/elly.vim'
-	Plug 'vim-airline/vim-airline'
+	Plug 'itchyny/lightline.vim'
 
 	" markdown
 	Plug 'plasticboy/vim-markdown'
@@ -114,9 +114,11 @@ set termguicolors
 " colorscheme iceberg
 colorscheme elly
 " set bg=dark
-let g:airline_theme='elly'
-" let g:airline_theme='iceberg'
-let g:airline#extensions#tabline#enabled = 1
+let g:lightline = {
+\  'enable': { 'tabline': 0 },
+\ 'colorscheme': 'elly'
+\ }
+set noshowmode
 
 " =============
 "" 検索系
