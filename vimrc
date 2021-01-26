@@ -111,11 +111,11 @@ set laststatus=2
 set listchars=tab:^\ ,trail:~
 syntax enable
 set termguicolors
-colorscheme iceberg
-" colorscheme elly
-set bg=dark
-" let g:airline_theme='elly'
-let g:airline_theme='iceberg'
+" colorscheme iceberg
+colorscheme elly
+" set bg=dark
+let g:airline_theme='elly'
+" let g:airline_theme='iceberg'
 let g:airline#extensions#tabline#enabled = 1
 
 " =============
