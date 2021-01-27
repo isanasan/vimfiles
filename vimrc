@@ -79,6 +79,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'skanehira/gyazo.vim'
 	Plug 'machakann/vim-highlightedyank'
 
+	Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-fugitive'
+
 	if has('nvim')
 		Plug 'joonty/vdebug'
 		Plug 'dbakker/vim-projectroot'
