@@ -77,6 +77,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tyru/caw.vim'
 	Plug 'tyru/eskk.vim'
 	Plug 'skanehira/gyazo.vim'
+	Plug 'machakann/vim-highlightedyank'
 
 	if has('nvim')
 		Plug 'joonty/vdebug'
