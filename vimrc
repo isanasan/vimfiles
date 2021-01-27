@@ -114,12 +114,7 @@ syntax enable
 set termguicolors
 colorscheme iceberg
 " colorscheme elly
-" set bg=dark
-let g:lightline = {
-\  'enable': { 'tabline': 0 },
-\ 'colorscheme': 'iceberg'
-\ }
-set noshowmode
+set bg=dark
 
 " =============
 "" 検索系
