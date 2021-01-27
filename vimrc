@@ -111,12 +111,12 @@ set laststatus=2
 set listchars=tab:^\ ,trail:~
 syntax enable
 set termguicolors
-" colorscheme iceberg
-colorscheme elly
+colorscheme iceberg
+" colorscheme elly
 " set bg=dark
 let g:lightline = {
 \  'enable': { 'tabline': 0 },
-\ 'colorscheme': 'elly'
+\ 'colorscheme': 'iceberg'
 \ }
 set noshowmode
 
