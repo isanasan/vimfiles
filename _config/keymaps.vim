@@ -10,7 +10,7 @@ nmap <leader>c <Plug>(caw:hatpos:toggle)
 vmap <leader>c <Plug>(caw:hatpos:toggle)
 
 tnoremap <C-g> <C-\><C-n>
-tnoremap <ESC> <C-\><C-n>
+" tnoremap <ESC> <C-\><C-n>
 
 noremap <S-h> 0
 noremap <S-l> $
